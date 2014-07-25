@@ -2,14 +2,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <link href="Content/bootstrap.css" rel="stylesheet" />
-    <title></title>
+    <title>Meal Builder+</title>
 </head>
-    <body>
-        
-        
-        
+    <body ng-app="mealBuilderPlusApp">
+        <div ng-controller="mainController">
+            <h1>{{meals}}</h1>
+
+
+        </div>
+
+
+
+
+
+
+
+
         <script src="scripts/angular.js"></script>
         <script src="scripts/angular-route.js"></script>
         <script src="scripts/angular-ui/ui-bootstrap.js"></script>
+
+
+        <script src="app/app.js"></script>
+        <script src="app/services/mealBuilderService.js"></script>
+        <script src="app/main/mainController.js"></script>
     </body>
 </html>
