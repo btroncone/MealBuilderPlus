@@ -1,9 +1,11 @@
 (function () {
     'use strict';
 
-    var serviceId = 'mealBuilderService';
+    angular
+        .module('mealBuilderPlusApp')
+        .factory('mealBuilderService', mealBuilderService);
 
-    angular.module('mealBuilderPlusApp').factory(serviceId, ['$http', mealBuilderService]);
+    mealBuilderService.$inject = ['$http'];
 
     function mealBuilderService($http) {
 
