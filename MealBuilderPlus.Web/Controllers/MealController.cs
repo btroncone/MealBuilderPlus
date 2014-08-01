@@ -38,6 +38,23 @@ namespace MealBuilderPlus.Web.Controllers
             
             return Ok(meal);
         }
+        [Route("")]
+        public IHttpActionResult Post([FromBody] Meal meal)
+        {
+            var newMeal = Repository.Insert(meal);
+            try
+            {
+                if (newMeal != null && Repository.SaveAll())
+                {
+                    return Created(Request.RequestUri + newMeal.MealId.ToString(), newMeal);
+                }
+            }
+            catch
+            {
+                
+            }
+            return BadRequest();
+        }
 
     }
 }

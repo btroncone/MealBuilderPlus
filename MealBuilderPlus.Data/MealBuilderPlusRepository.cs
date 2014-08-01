@@ -1,18 +1,32 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using MealBuilderPlus.Data.Entities;
 
 namespace MealBuilderPlus.Data
 {
     public class MealBuilderPlusRepository : IMealBuilderPlusRepository
     {
+        private readonly MealBuilderPlusContext _context;
+
+        public MealBuilderPlusRepository(MealBuilderPlusContext context)
+        {
+            _context = context;
+        }
         public Meal GetMeal(int mealId)
         {
-            throw new System.NotImplementedException();
+            return _context.Meals.Find(mealId);
+        }
+
+        public IQueryable<Meal> GetMeals()
+        {
+            return _context.Meals;
         }
 
         public Meal GetMealByType(MealTypes mealType)
         {
-            throw new System.NotImplementedException();
+            return _context.Meals.Where(m => m.MealType.Equals(mealType))
+                                 .OrderBy(m => Guid.NewGuid())
+                                 .FirstOrDefault();
         }
 
         public IQueryable<Meal> GetAllEatenMeals()
@@ -20,14 +34,30 @@ namespace MealBuilderPlus.Data
             throw new System.NotImplementedException();
         }
 
-        public bool Insert(Meal meal)
+        public Meal Insert(Meal meal)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                return _context.Meals.Add(meal);
+                
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public bool Insert(Ingredient ingredient)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                _context.Ingredients.Add(ingredient);
+                return true;
+            }
+            catch
+            {
+                return false;
+            };
         }
 
         public bool Update(Meal meal)
@@ -48,6 +78,11 @@ namespace MealBuilderPlus.Data
         public bool DeleteIngredient(int id)
         {
             throw new System.NotImplementedException();
+        }
+
+        public bool SaveAll()
+        {
+            return _context.SaveChanges() > 0;
         }
     }
 }

@@ -4,28 +4,28 @@
 (function(){
     "use strict";
 
-    var controllerId = "mealDetailController";
+    angular
+        .module("mealBuilderPlusApp")
+        .controller('mealDetailController', mealDetailController);
 
-    angular.module("mealBuilderPlusApp").controller(controllerId,
-        ['$scope', '$routeParams','mealBuilderService', mealDetailController]);
+    mealDetailController.$inject = ['$routeParams','mealBuilderService'];
 
-    function mealDetailController($scope, $routeParams, mealBuilderService){
-
-        var init = function(){
-            mealBuilderService.getMeal(mealId).then(onMeal, onError);
-        };
-
+    function mealDetailController($routeParams, mealBuilderService){
+        /* jshint validthis: true */
+        var vm = this;
         var mealId = $routeParams.mealId;
 
-        var onMeal = function(data){
-            $scope.meal = data;
-        };
+        activate();
 
-        var onError = function(error){
-            $scope.error = "There was an error during your request:" + error;
-        };
-
-        init();
+        function activate(){
+            return mealBuilderService.getMeal(mealId)
+                .then(function(data){
+                    vm.meal = data;
+                    return vm.meal;
+                }, function(){
+                    toastr.error("Error!");
+                });
+        }
     }
 
 }());

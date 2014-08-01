@@ -4,16 +4,13 @@
 (function(){
     "use strict";
 
-    var controllerId = 'mainController';
+    angular
+        .module('mealBuilderPlusApp')
+        .controller('mainController', mainController);
 
-    angular.module('mealBuilderPlusApp').controller(controllerId,
-        ['$scope', 'mealBuilderService', mainController]);
+    mainController.$inject = ['$scope', mainController];
 
-    function mainController($scope, mealBuilderService) {
-        $scope.meals = mealBuilderService.getAllMeals();
-        $scope.activate = activate;
+    function mainController() {
 
-        function activate() {
-        }
     }
 }());

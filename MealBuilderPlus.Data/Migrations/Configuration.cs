@@ -10,9 +10,10 @@ namespace MealBuilderPlus.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(MealBuilderPlus.Data.MealBuilderPlusContext context)
+        protected override void Seed(MealBuilderPlusContext context)
         {
             //  This method will be called after migrating to the latest version.
 

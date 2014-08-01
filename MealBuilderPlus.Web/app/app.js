@@ -1,3 +1,9 @@
 (function(){
-    var app = angular.module("mealBuilderPlusApp",["ngRoute"])
+    angular
+        .module("mealBuilderPlusApp",[
+            "ngRoute",
+            "ui.bootstrap"
+        ]);
+
+
 }());

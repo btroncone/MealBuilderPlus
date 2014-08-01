@@ -4,25 +4,29 @@
 (function(){
     "use strict";
 
-    var controllerId = "mealEntryController";
+    angular
+        .module("mealBuilderPlusApp")
+        .controller('mealEntryController', mealEntryController);
 
-    angular.module("mealBuilderPlusApp").controller(controllerId,
-        ['$scope','mealBuilderService', mealEntryController]);
+    mealEntryController.$inject = ['mealBuilderService'];
 
-    function mealEntryController($scope, mealBuilderService){
-        $scope.meal = {};
-        $scope.mealType = undefined;
-        $scope.mealTypes = ["Chicken", "Beef", "Fish", "Other"];
-        $scope.saveMeal = function(){
-            mealBuilderService.saveMeal($scope.meal)
-                .success(function(response){
-                    console.log(response);
-                    $scope.alerts.push({msg: 'New meal entered, keep going!', type:"success"});
-                    $scope.meal = {};
-                    $scope.mealType = undefined;
+    function mealEntryController(mealBuilderService){
+        /* jshint validthis: true */
+        var vm = this;
+        vm.meal = {};
+        vm.mealType = undefined;
+        vm.mealTypes = ["Chicken", "Beef", "Fish", "Other"];
+        vm.saveMeal = saveMeal;
+
+        function saveMeal(){
+            mealBuilderService.saveMeal(vm.meal)
+                .success(function(){
+                    toastr.success("Meal Successfully Saved!");
+                    vm.meal = {};
+                    vm.mealType = undefined;
                 })
-                .error(function(response){
-                    console.log("something went wrong!" + response.data);
+                .error(function(){
+                    toastr.error("Error saving meal!");
                 });
         };
     }

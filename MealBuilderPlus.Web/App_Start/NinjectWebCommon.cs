@@ -1,4 +1,5 @@
 using System.Web.Http;
+using MealBuilderPlus.Data;
 using WebApiContrib.IoC.Ninject;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(MealBuilderPlus.Web.App_Start.NinjectWebCommon), "Start")]
@@ -65,6 +66,9 @@ namespace MealBuilderPlus.Web.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<MealBuilderPlusContext>().To<MealBuilderPlusContext>().InRequestScope();
+            kernel.Bind<IMealBuilderPlusRepository>().To<MealBuilderPlusRepository>().InRequestScope();
+
         }        
     }
 }

@@ -21,12 +21,12 @@ namespace MealBuilderPlus.Web.Models
             return new MealModel
             {
                 Description = meal.Description,
-                LastEaten = meal.LastEaten,
+                LastEaten = meal.LastEaten ?? DateTime.MinValue,
                 MealType = meal.MealType,
                 Name = meal.Name,
                 Url = "NA"
             };
-               
+
         }
     }
 }

@@ -1,1 +1,18 @@
-<h1>Meal Entry</h1>
+<form role="form" ng-submit="vm.saveMeal()">
+    <div class="form-group">
+        <label for="mealName">Meal Name</label>
+        <input type="text" ng-model="vm.meal.name" class="form-control" id="mealName" placeholder="Name">
+    </div>
+    <div class="form-group">
+        <label for="mealDescription">Description</label>
+        <textarea ng-model="vm.meal.description" class="form-control" id="mealDescription" placeholder="Description"></textarea>
+    </div>
+
+
+    <div class="form-group">
+        <label for="mealType">Meal Type</label>
+        <input type="text" id="mealType" ng-model="vm.meal.mealType" typeahead="meal for meal in vm.mealTypes | filter:$viewValue | limitTo:8" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

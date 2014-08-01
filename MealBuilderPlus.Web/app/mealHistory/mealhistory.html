@@ -1,9 +1,19 @@
 <h1>Meal History</h1>
-        <table>
-            <thead>
-
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Meal Type</td>
+            <td>Last Eaten</td>
+            <td>Details</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="meal in vm.mealList">
+            <td>{{meal.name}}</td>
+            <td>{{meal.mealType}}</td>
+            <td>{{meal.lastEaten | date}}</td>
+            <td><a href="#/meal/{{meal.mealId}}">Details</a> </td>
+        </tr>
+    </tbody>
+</table>

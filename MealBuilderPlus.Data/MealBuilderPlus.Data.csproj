@@ -48,7 +48,9 @@
   <ItemGroup>
     <Compile Include="Entities\Ingredient.cs" />
     <Compile Include="Entities\Meal.cs" />
+    <Compile Include="IMealBuilderPlusRepository.cs" />
     <Compile Include="MealBuilderPlusContext.cs" />
+    <Compile Include="MealBuilderPlusRepository.cs" />
     <Compile Include="MealTypes.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

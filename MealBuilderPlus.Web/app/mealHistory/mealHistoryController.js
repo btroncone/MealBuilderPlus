@@ -1,24 +1,35 @@
-/**
- * Created by briantroncone on 7/27/2014.
- */
 (function(){
     "use strict";
 
-    var controllerId = 'mealHistoryController';
+    angular
+        .module('mealBuilderPlusApp')
+        .controller('mealHistoryController', mealHistoryController);
 
-    angular.module('mealBuilderPlusApp').controller(controllerId,
-        ['$scope', 'mealBuilderService', mealHistoryController]);
+    mealHistoryController.$inject = ['$location', 'mealBuilderService'];
 
-    function mealHistoryController($scope, mealBuilderService ) {
+    function mealHistoryController($location, mealBuilderService ) {
+        /* jshint validthis: true */
+        var vm = this;
+        vm.mealList = [];
+        vm.getMealDetails = getMealDetails;
 
-        var init = function () {
-            $scope.mealList = mealBuilderService.getAllMeals();
-        };
+        activate();
 
+        function activate(){
+            return mealBuilderService.getAllMeals()
+                .then(function(data){
+                    vm.mealList = data;
+                    return vm.mealList;
+                }, onError);
+        }
 
+        function getMealDetails(meal){
+            $location.url('/meal/' + meal.mealId);
+        }
 
-
-
-        init();
+        function onError(){
+            toastr.error('error!');
+        }
     }
 }());
+

@@ -1,26 +1,30 @@
-/**
- * Created by briantroncone on 7/24/2014.
- */
-describe("mealHistoryController", function(){
-    "use strict";
+beforeEach(module("mealBuilderPlusApp"));
+var $rootScope, $controller, $httpBackend, scope;
+beforeEach(inject(function(_$rootScope_, _$controller_, _$httpBackend_){
 
-    var scope, $controllerConstructor, mockMealBuilderService;
+    $rootScope = _$rootScope_;
+    $controller = _$controller_;
+    $httpBackend = _$httpBackend_;
+    scope = $rootScope.$new();
+}));
+afterEach(function(){
 
-    beforeEach(module("mealBuilderPlusApp"));
+    $httpBackend.verifyNoOutstandingExpectation();
+    $httpBackend.verifyNoOutstandingRequest();
+});
 
-    beforeEach(inject(function($controller, $rootScope){
-        scope = $rootScope.$new();
-        mockMealBuilderService = sinon.stub({getAllMeals: function (){}});
-            $controllerConstructor = $controller;
-        }));
+describe("the mealHistoryController", function(){
 
-    it('should set the scope meals to the result of mealBuilderService.getAllMeals', function(){
-        var mockMeals = {};
-        mockMealBuilderService.getAllMeals.returns(mockMeals);
-
-        var controller = $controllerConstructor("mealHistoryController",
-            {$scope: scope, mealBuilderService: mockMealBuilderService});
-
-        expect(scope.mealList).toBe(mockMeals);
+    beforeEach(function(){
+        $httpBackend.when("GET", "/api/meals").respond([{},{},{}]);
+        $controller("mealHistoryController", {
+            $scope: scope
+        });
+        $httpBackend.flush();
     });
+
+    it("should retrieve meals to a list", function(){
+        expect(scope.mealList.length).toBe(3);
+    });
+
 });
