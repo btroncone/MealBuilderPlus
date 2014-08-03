@@ -6,14 +6,17 @@
             <td>Meal Type</td>
             <td>Last Eaten</td>
             <td>Details</td>
+            <td>Delete</td>
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="meal in vm.mealList">
+        <tr dir-paginate="meal in vm.mealList | itemsPerPage: 5">
             <td>{{meal.name}}</td>
             <td>{{meal.mealType}}</td>
             <td>{{meal.lastEaten | date}}</td>
-            <td><a href="#/meal/{{meal.mealId}}">Details</a> </td>
+            <td><button type="button" class="btn btn-success btn-sm" ng-click="vm.getMealDetails(meal)">Details</button></td>
+            <td><button type="button" class="btn btn-danger btn-sm" ng-click="vm.deleteMeal($index)">Delete</button></td>
         </tr>
     </tbody>
 </table>
+<dir-pagination-controls></dir-pagination-controls>

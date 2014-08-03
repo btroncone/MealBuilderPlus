@@ -72,7 +72,20 @@ namespace MealBuilderPlus.Data
 
         public bool DeleteMeal(int id)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                var entity = _context.Meals.FirstOrDefault(d => d.MealId == id);
+                if (entity != null)
+                {
+                    _context.Meals.Remove(entity);
+                    return true;
+                }
+            }
+            catch
+            {
+
+            }
+            return false;
         }
 
         public bool DeleteIngredient(int id)

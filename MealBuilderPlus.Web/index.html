@@ -4,13 +4,15 @@
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/toastr.css" rel="stylesheet" />
     <link href="Content/custom.css" rel="stylesheet"/>
+    <link href="Content/animate.css" rel="stylesheet"/>
+
     <title>Meal Builder+</title>
 </head>
     <body>
     <div ng-include="'app/layout/navbar.html'"></div>
 
         <div class="container">
-            <div ng-view></div>
+            <div ng-view class="ng-enter"></div>
         </div>
 
 
@@ -23,12 +25,14 @@
         <script src="scripts/toastr.js"></script>
 
         <script src="scripts/angular.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-animate.js"></script>
         <script src="scripts/angular-route.js"></script>
         <script src="scripts/angular-ui/ui-bootstrap.js"></script>
         <script src="scripts/angular-ui/ui-bootstrap-tpls.js"></script>
 
         <script src="app/app.js"></script>
         <script src="app/route-config.js"></script>
+        <script src="app/directives/dirPagination.js"></script>
         <script src="app/services/mealBuilderService.js"></script>
         <script src="app/main/mainController.js"></script>
         <script src="app/mealHistory/mealHistoryController.js"></script>

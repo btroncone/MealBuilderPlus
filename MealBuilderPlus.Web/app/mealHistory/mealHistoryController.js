@@ -12,7 +12,7 @@
         var vm = this;
         vm.mealList = [];
         vm.getMealDetails = getMealDetails;
-
+        vm.deleteMeal = deleteMeal;
         activate();
 
         function activate(){
@@ -23,6 +23,14 @@
                 }, onError);
         }
 
+        function deleteMeal($index){
+            var meal = vm.mealList[$index];
+            return mealBuilderService.deleteMeal(meal.mealId)
+                .then(function(){
+                    toastr.success("Meal deleted!");
+                    vm.mealList.splice($index, 1);
+                }, onError);
+        }
         function getMealDetails(meal){
             $location.url('/meal/' + meal.mealId);
         }
@@ -30,6 +38,7 @@
         function onError(){
             toastr.error('error!');
         }
+
     }
 }());
 

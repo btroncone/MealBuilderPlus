@@ -55,6 +55,21 @@ namespace MealBuilderPlus.Web.Controllers
             }
             return BadRequest();
         }
+        [Route("{mealId:int}")]
+        public IHttpActionResult Delete(int mealId)
+        {
+            var meal = Repository.GetMeal(mealId);
+            if (meal == null)
+            {
+                return NotFound();
+            }
+
+            if (Repository.DeleteMeal(mealId) && Repository.SaveAll())
+            {
+                return Ok();
+            }
+            return BadRequest();
+        }
 
     }
 }

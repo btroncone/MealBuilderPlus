@@ -2,7 +2,9 @@
     angular
         .module("mealBuilderPlusApp",[
             "ngRoute",
-            "ui.bootstrap"
+            "ui.bootstrap",
+            "ngAnimate",
+            "angularUtils.directives.dirPagination"
         ]);
 
 

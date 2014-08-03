@@ -12,7 +12,8 @@
         var service = {
             getAllMeals: getAllMeals,
             getMeal: getMeal,
-            saveMeal: saveMeal
+            saveMeal: saveMeal,
+            deleteMeal: deleteMeal
         };
 
         return service;
@@ -33,6 +34,10 @@
 
         function saveMeal(meal){
             return $http.post('/api/meals', meal);
+        }
+
+        function deleteMeal(mealId){
+            return $http.delete('/api/meals/' + mealId);
         }
 
 
