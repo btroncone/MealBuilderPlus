@@ -1,0 +1,37 @@
+<h1>Meal Information</h1>
+<div class="row">
+    <div class="col-xs-4 margin-bottom-10">
+        <label for="search">Search:</label>
+        <input ng-model="meal.name" id="search" class="form-control" placeholder="Name/Type...">
+    </div>
+    <div class="col-xs-4 margin-bottom-10">
+        <label for="mealFilter">Filter By:</label>
+        <select class="form-control" ng-model="mealSortOrder" id="mealFilter">
+            <option value="+name">Name</option>
+            <option value="-lastEaten">Last Eaten</option>
+            <option value="+mealType">Meal Type</option>
+        </select>
+    </div>
+    <a href="#/mealentry" class="btn btn-success margin-top-25">Add A Meal</a>
+</div>
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Meal Type</td>
+            <td>Last Eaten</td>
+            <td>Details</td>
+            <td>Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr dir-paginate="meal in vm.mealList | filter: meal.name | orderBy: mealSortOrder | itemsPerPage: 5">
+            <td>{{meal.name}}</td>
+            <td>{{meal.mealType}}</td>
+            <td>{{meal.lastEaten | date}}</td>
+            <td><button type="button" class="btn btn-success btn-sm" ng-click="vm.getMealDetails(meal)">Details</button></td>
+            <td><button type="button" class="btn btn-danger btn-sm" ng-click="vm.deleteMeal($index)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+<dir-pagination-controls></dir-pagination-controls>

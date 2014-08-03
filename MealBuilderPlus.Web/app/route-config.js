@@ -14,9 +14,9 @@
                 controller: 'mealEntryController',
                 controllerAs: 'vm'
             })
-            .when('/mealhistory', {
-                templateUrl: 'app/mealHistory/mealhistory.html',
-                controller: 'mealHistoryController',
+            .when('/mealInformation', {
+                templateUrl: 'app/mealInformation/mealInformation.html',
+                controller: 'mealInformationController',
                 controllerAs: 'vm'
             })
             .when('/meal/:mealId', {

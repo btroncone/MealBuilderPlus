@@ -14,18 +14,28 @@
         /* jshint validthis: true */
         var vm = this;
         var mealId = $routeParams.mealId;
+        vm.meal = {};
+        vm.allIngredients = {};
+        vm.isLastEaten = undefined;
+        vm.isAddingIngredients = false;
 
         activate();
 
+        //TODO extract this into route resolve
         function activate(){
             return mealBuilderService.getMeal(mealId)
                 .then(function(data){
                     vm.meal = data;
+                    vm.isLastEaten = vm.meal.lastEaten ? true : false;
                     return vm.meal;
                 }, function(){
                     toastr.error("Error!");
+                })
+                .then(function(){
+                     console.log("Hello world!");
                 });
         }
+
     }
 
 }());

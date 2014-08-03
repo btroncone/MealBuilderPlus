@@ -3,11 +3,11 @@
 
     angular
         .module('mealBuilderPlusApp')
-        .controller('mealHistoryController', mealHistoryController);
+        .controller('mealInformationController', mealInformationController);
 
-    mealHistoryController.$inject = ['$location', 'mealBuilderService'];
+    mealInformationController.$inject = ['$location', 'mealBuilderService'];
 
-    function mealHistoryController($location, mealBuilderService ) {
+    function mealInformationController($location, mealBuilderService ) {
         /* jshint validthis: true */
         var vm = this;
         vm.mealList = [];
