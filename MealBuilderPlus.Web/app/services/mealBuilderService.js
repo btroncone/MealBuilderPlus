@@ -13,7 +13,8 @@
             getAllMeals: getAllMeals,
             getMeal: getMeal,
             saveMeal: saveMeal,
-            deleteMeal: deleteMeal
+            deleteMeal: deleteMeal,
+            getAllIngredients: getAllIngredients
         };
 
         return service;
@@ -38,6 +39,10 @@
 
         function deleteMeal(mealId){
             return $http.delete('/api/meals/' + mealId);
+        }
+
+        function getAllIngredients(){
+
         }
 
 

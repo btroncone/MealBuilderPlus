@@ -1,21 +1,38 @@
 <div class="page-header">
     <h1>{{vm.meal.name}} <small ng-show="vm.isLastEaten">Last Eaten: {{vm.meal.lastEaten | date}}</small></h1>
 </div>
-<button class="btn btn-default btn-success margin-bottom-10">Add Ingredients</button>
+<button class="btn btn-default btn-success margin-bottom-10" ng-click="vm.addIngredients()">Add Ingredients</button>
 <div class="panel panel-default">
     <div class="panel-heading">Current Ingredients</div>
     <table class="table">
-        <th>
+        <thead>
             <tr>
-                <td>Name</td>
-                <td>Remove</td>
+                <th>Name</th>
+                <th>Remove</th>
             </tr>
-        </th>
+        </thead>
         <tbody>
             <tr ng-repeat="ingredient in vm.meal.ingredients">
                 <td>{{ingredient.name}}</td>
                 <td><button type="button" class="btn btn-danger btn-sm" ng-click="vm.deleteIngredient($index)">Remove</button></td>
             </tr>
+        </tbody>
+    </table>
+</div>
+<div class="panel panel-default" ng-show="vm.isAddingIngredients">
+    <div class="panel-heading">Available Ingredients</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Add To Meal</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="ingredient in vm.availableIngredients">
+            <td>{{ingredient.name}}</td>
+            <td><button type="button" class="btn btn-success btn-sm" ng-click="vm.addIngredient($index)">Add To Meal</button></td>
+        </tr>
         </tbody>
     </table>
 </div>
