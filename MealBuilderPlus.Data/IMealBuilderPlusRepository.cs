@@ -5,11 +5,13 @@ namespace MealBuilderPlus.Data
 {
     public interface IMealBuilderPlusRepository
     {
+        //Meal
         Meal GetMeal(int mealId);
         IQueryable<Meal> GetMeals();
         Meal GetMealByType(MealTypes mealType);
-        IQueryable<Meal> GetAllEatenMeals();
 
+        //Ingredients
+        IQueryable<Ingredient> GetIngredients();
 
         //Inserts
         Meal Insert(Meal meal);

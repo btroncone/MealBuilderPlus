@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Linq;
 using System.Web.Http;
 using MealBuilderPlus.Data;
 using MealBuilderPlus.Data.Entities;
-using MealBuilderPlus.Web.Models;
 
 namespace MealBuilderPlus.Web.Controllers
 {

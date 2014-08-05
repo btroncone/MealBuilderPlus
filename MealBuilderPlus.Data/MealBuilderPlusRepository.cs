@@ -14,7 +14,8 @@ namespace MealBuilderPlus.Data
         }
         public Meal GetMeal(int mealId)
         {
-            return _context.Meals.Find(mealId);
+            return _context.Meals.Include("Ingredients")
+                                 .FirstOrDefault(m => m.MealId.Equals(mealId));
         }
 
         public IQueryable<Meal> GetMeals()
@@ -29,9 +30,9 @@ namespace MealBuilderPlus.Data
                                  .FirstOrDefault();
         }
 
-        public IQueryable<Meal> GetAllEatenMeals()
+        public IQueryable<Ingredient> GetIngredients()
         {
-            throw new System.NotImplementedException();
+            return _context.Ingredients;
         }
 
         public Meal Insert(Meal meal)
@@ -90,7 +91,20 @@ namespace MealBuilderPlus.Data
 
         public bool DeleteIngredient(int id)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                var entity = _context.Ingredients.FirstOrDefault(d => d.IngredientId == id);
+                if (entity != null)
+                {
+                    _context.Ingredients.Remove(entity);
+                    return true;
+                }
+            }
+            catch
+            {
+
+            }
+            return false;
         }
 
         public bool SaveAll()
