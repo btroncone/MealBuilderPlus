@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc.Html;
 using MealBuilderPlus.Data;
 using MealBuilderPlus.Data.Entities;
 
@@ -20,13 +21,26 @@ namespace MealBuilderPlus.Web.Models
         {
             return new MealModel
             {
+                MealId = meal.MealId,
                 Description = meal.Description,
-                LastEaten = meal.LastEaten ?? DateTime.MinValue,
+                LastEaten = meal.LastEaten,
                 MealType = meal.MealType,
                 Name = meal.Name,
-                Url = "NA"
+                Ingredients = meal.Ingredients.Select(Create)
             };
 
         }
+
+        public IngredientModel Create(Ingredient ingredient)
+        {
+            return new IngredientModel
+            {
+                IngredientId = ingredient.IngredientId,
+                Name = ingredient.Name,
+                CheckPantry = ingredient.CheckPantry                          
+            };
+
+        }
+
     }
 }

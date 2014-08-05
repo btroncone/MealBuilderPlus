@@ -29,7 +29,7 @@ namespace MealBuilderPlus.Web.Controllers
         [Route("{mealId:int}")]
         public IHttpActionResult Get(int mealId)
         {
-            var meal = Repository.GetMeal(mealId);
+            var meal = ModelFactory.Create(Repository.GetMeal(mealId));
             
             return Ok(meal);
         }

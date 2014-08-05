@@ -1,6 +1,3 @@
-/**
- * Created by briantroncone on 7/28/2014.
- */
 (function(){
     "use strict";
 
@@ -8,59 +5,24 @@
         .module("mealBuilderPlusApp")
         .controller('mealDetailController', mealDetailController);
 
-    mealDetailController.$inject = ['$routeParams','mealBuilderService'];
+    mealDetailController.$inject = ['$routeParams', '$q','mealBuilderService'];
 
-    function mealDetailController($routeParams, mealBuilderService){
+    function mealDetailController($routeParams, $q, mealBuilderService){
         /* jshint validthis: true */
         var vm = this;
         var mealId = $routeParams.mealId;
         vm.meal = {};
+        vm.availableIngredients = {};
         vm.isLastEaten = undefined;
         vm.isAddingIngredients = false;
         vm.addIngredients = addIngredients;
-        vm.availableIngredients = [
-            {
-                id: 1,
-                name: "Sugar",
-                checkPantry: false
-            },
-            {
-                id: 2,
-                name: "Milk",
-                checkPantry: true
-            },
-            {
-                id: 3,
-                name: "Pasta",
-                checkPantry: false
-            },
-            {
-                id: 4,
-                name: "Bread",
-                checkPantry: false
-            }];
 
         activate();
-        //TODO $q.all
         function activate(){
-            return mealBuilderService.getMeal(mealId)
+            return $q.all([mealBuilderService.getMeal(mealId), mealBuilderService.getAllIngredients()])
                 .then(function(data){
-                    vm.meal = data;
-                    vm.meal.ingredients = [{
-                            id: 1,
-                            name: "Sugar",
-                            checkPantry: false
-                        },
-                        {
-                            id: 2,
-                            name: "Milk",
-                            checkPantry: true
-                        },
-                        {
-                            id: 3,
-                            name: "Pasta",
-                            checkPantry: false
-                        }];
+                    vm.meal = data[0];
+                    vm.availableIngredients = data[1];
                     vm.isLastEaten = vm.meal.lastEaten ? true : false;
                     getAvailableIngredients();
                     return vm.meal;
@@ -71,9 +33,11 @@
                      console.log("Hello world!");
                 });
         }
+
         function addIngredients(){
             vm.isAddingIngredients = !vm.isAddingIngredients;
         }
+
         function getAvailableIngredients(){
             for(var i=0 ; i < vm.availableIngredients.length; i++)
             {
@@ -84,7 +48,6 @@
                     }
                 }
             }
-            console.log(vm.availableIngredients);
         }
     }
 }());

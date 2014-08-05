@@ -164,11 +164,12 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
+    <Compile Include="Controllers\IngredientController.cs" />
     <Compile Include="Controllers\MealController.cs" />
-    <Compile Include="Controllers\MealIngredientsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\IngredientModel.cs" />
     <Compile Include="Models\MealModel.cs" />
     <Compile Include="Models\ModelFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

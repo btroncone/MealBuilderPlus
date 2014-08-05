@@ -42,7 +42,10 @@
         }
 
         function getAllIngredients(){
-
+            return $http.get('/api/ingredients')
+                .then(function(response){
+                    return response.data;
+                });
         }
 
 
