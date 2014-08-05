@@ -28,9 +28,6 @@
                     return vm.meal;
                 }, function(){
                     toastr.error("Error!");
-                })
-                .then(function(){
-                     console.log("Hello world!");
                 });
         }
 
