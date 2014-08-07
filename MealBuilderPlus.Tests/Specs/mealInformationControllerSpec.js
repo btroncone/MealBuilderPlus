@@ -13,11 +13,11 @@ afterEach(function(){
     $httpBackend.verifyNoOutstandingRequest();
 });
 
-describe("the mealHistoryController", function(){
+describe("the mealInformationController", function(){
 
     beforeEach(function(){
         $httpBackend.when("GET", "/api/meals").respond([{},{},{}]);
-        $controller("mealHistoryController", {
+        $controller("mealInformationController as vm", {
             $scope: scope
         });
         $httpBackend.flush();

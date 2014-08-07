@@ -12,7 +12,7 @@ namespace MealBuilderPlus.Data
 
         //Ingredients
         IQueryable<Ingredient> GetIngredients();
-
+        Ingredient GetIngredient(int ingredientId);
         //Inserts
         Meal Insert(Meal meal);
         bool Insert(Ingredient ingredient);

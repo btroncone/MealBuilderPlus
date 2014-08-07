@@ -14,7 +14,9 @@
             getMeal: getMeal,
             saveMeal: saveMeal,
             deleteMeal: deleteMeal,
-            getAllIngredients: getAllIngredients
+            getAllIngredients: getAllIngredients,
+            addIngredientToMeal: addIngredientToMeal,
+            deleteIngredientFromMeal: deleteIngredientFromMeal
         };
 
         return service;
@@ -46,6 +48,14 @@
                 .then(function(response){
                     return response.data;
                 });
+        }
+
+        function addIngredientToMeal(ingredientId, mealId){
+            return $http.post('/api/ingredients/' + ingredientId + '/meals/' + mealId );
+        }
+
+        function deleteIngredientFromMeal(ingredientId, mealId){
+            return $http.delete('/api/ingredients/' + ingredientId + '/meals/' + mealId);
         }
 
 

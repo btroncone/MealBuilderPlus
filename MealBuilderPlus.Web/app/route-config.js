@@ -24,8 +24,19 @@
                 controller: 'mealDetailController',
                 controllerAs: 'vm'
             })
+            .when('/ingredientInformation', {
+                templateUrl: 'app/ingredientInformation/ingredientInformation.html',
+                controller: 'ingredientInformationController',
+                controllerAs: 'vm'
+            })
+            .when('/ingredientInformation/:ingredientId', {
+                templateUrl: 'app/ingredientDetails/ingredientDetails.html',
+                controller: 'ingredientDetailController',
+                controllerAs: 'vm'
+            })
             .when('/mealgenerator', {
                 templateUrl: 'app/mealGenerator/mealgenerator.html'
-            });
+            })
+        ;
     }
 }());

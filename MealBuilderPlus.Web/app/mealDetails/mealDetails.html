@@ -15,7 +15,7 @@
         <tbody>
             <tr ng-repeat="ingredient in vm.meal.ingredients">
                 <td>{{ingredient.name}}</td>
-                <td><button type="button" class="btn btn-danger btn-sm" ng-click="vm.deleteIngredient($index)">Remove</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm" ng-click="vm.deleteIngredientFromMeal($index)">Remove</button></td>
             </tr>
         </tbody>
     </table>
@@ -32,7 +32,7 @@
         <tbody>
         <tr ng-repeat="ingredient in vm.availableIngredients">
             <td>{{ingredient.name}}</td>
-            <td><button type="button" class="btn btn-success btn-sm" ng-click="vm.addIngredient($index)">Add To Meal</button></td>
+            <td><button type="button" class="btn btn-success btn-sm" ng-click="vm.addIngredientToMeal($index)">Add To Meal</button></td>
         </tr>
         </tbody>
     </table>

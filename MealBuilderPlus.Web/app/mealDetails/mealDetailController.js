@@ -16,6 +16,8 @@
         vm.isLastEaten = undefined;
         vm.isAddingIngredients = false;
         vm.addIngredients = addIngredients;
+        vm.addIngredientToMeal = addIngredientToMeal;
+        vm.deleteIngredientFromMeal = deleteIngredientFromMeal;
 
         activate();
         function activate(){
@@ -26,13 +28,34 @@
                     vm.isLastEaten = vm.meal.lastEaten ? true : false;
                     getAvailableIngredients();
                     return vm.meal;
-                }, function(){
-                    toastr.error("Error!");
-                });
+                }, onError);
         }
 
         function addIngredients(){
             vm.isAddingIngredients = !vm.isAddingIngredients;
+        }
+
+        function addIngredientToMeal($index){
+            var ingredientToAdd = vm.availableIngredients[$index];
+            mealBuilderService.addIngredientToMeal(ingredientToAdd.ingredientId, vm.meal.mealId)
+                              .then(function(){
+                                vm.meal.ingredients.push(ingredientToAdd);
+                                vm.availableIngredients.splice($index, 1);
+                                if(vm.availableIngredients.length === 0){
+                                    vm.isAddingIngredients = false;
+                                }
+                                toastr.success('Ingredient Added Successfully!');
+                              }, onError);
+        }
+
+        function deleteIngredientFromMeal($index){
+            var ingredientToDelete = vm.meal.ingredients[$index];
+            mealBuilderService.deleteIngredientFromMeal(ingredientToDelete.ingredientId, vm.meal.mealId)
+                .then(function(){
+                    vm.meal.ingredients.splice($index, 1);
+                    vm.availableIngredients.push(ingredientToDelete);
+                    toastr.success('Ingredient Successfully Removed!');
+                }, onError);
         }
 
         function getAvailableIngredients(){
@@ -45,6 +68,10 @@
                     }
                 }
             }
+        }
+
+        function onError(){
+            toastr.error('There was an error processing your request, please try again!');
         }
     }
 }());

@@ -30,6 +30,11 @@ namespace MealBuilderPlus.Data
                                  .FirstOrDefault();
         }
 
+        public Ingredient GetIngredient(int ingredientId)
+        {
+            return _context.Ingredients.FirstOrDefault(i => i.IngredientId.Equals(ingredientId));
+        }
+
         public IQueryable<Ingredient> GetIngredients()
         {
             return _context.Ingredients;
