@@ -6,6 +6,4 @@
             "ngAnimate",
             "angularUtils.directives.dirPagination"
         ]);
-
-
 }());
