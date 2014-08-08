@@ -27,7 +27,7 @@
             var meal = vm.mealList[$index];
             return mealBuilderService.deleteMeal(meal.mealId)
                 .then(function(){
-                    toastr.success("Meal deleted!");
+                    //toastr.success("Meal deleted!");
                     vm.mealList.splice($index, 1);
                 }, onError);
         }
