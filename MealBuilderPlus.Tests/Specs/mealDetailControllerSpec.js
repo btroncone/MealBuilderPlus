@@ -1,6 +1,17 @@
 describe("the mealDetailController", function(){
-    beforeEach(module("mealBuilderPlusApp"));
-    var $rootScope, $controller, $httpBackend, scope;
+    var $rootScope,
+        $controller,
+        $httpBackend,
+        alertServiceSpy,
+        scope;
+
+    beforeEach(module("mealBuilderPlusApp", function($provide){
+        alertServiceSpy = jasmine.createSpyObj("alertService",["withSuccess","withError"]);
+        alertServiceSpy.withSuccess.andReturn(true);
+        alertServiceSpy.withError.andReturn(true);
+        $provide.value("alertService", alertServiceSpy);
+    }));
+
     beforeEach(inject(function(_$rootScope_,_$controller_, _$httpBackend_){
         $rootScope = _$rootScope_;
         $controller = _$controller_;
@@ -32,12 +43,29 @@ describe("the mealDetailController", function(){
     });
 
     it('should add ingredients to meal and remove from available ingredients', function(){
-
-
+        $httpBackend.when("POST", "/api/ingredients/3/meals/1").respond(200);
+        scope.vm.addIngredientToMeal(0);
+        $httpBackend.flush();
+        expect(scope.vm.availableIngredients.length).toBe(0);
+        expect(scope.vm.meal.ingredients.length).toBe(3);
+        expect(alertServiceSpy.withSuccess).toHaveBeenCalled();
     });
 
     it('should remove ingredients from meal and add to available ingredients', function(){
-
-
+        $httpBackend.when("DELETE", "/api/ingredients/1/meals/1").respond(200);
+        scope.vm.deleteIngredientFromMeal(0);
+        $httpBackend.flush();
+        expect(scope.vm.meal.ingredients.length).toBe(1);
+        expect(scope.vm.availableIngredients.length).toBe(2);
+        expect(alertServiceSpy.withSuccess).toHaveBeenCalled();
     });
+
+    it('should show an error when the item is not successfully removed', function(){
+        $httpBackend.when("DELETE", "/api/ingredients/1/meals/1").respond(400);
+        scope.vm.deleteIngredientFromMeal(0);
+        $httpBackend.flush();
+        expect(alertServiceSpy.withError).toHaveBeenCalled();
+    });
+
+
 });

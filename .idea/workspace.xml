@@ -18,25 +18,15 @@
     <disable_hints />
   </component>
   <component name="DockManager">
-    <window id="5">
+    <window id="6">
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="mealInformationControllerSpec.js" pinned="false" current="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Tests/Specs/mealInformationControllerSpec.js">
+            <file leaf-file-name="mealDetailControllerSpec.js" pinned="false" current="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Tests/Specs/mealDetailControllerSpec.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.08773585" vertical-offset="0" max-vertical-offset="1240">
-                    <caret line="3" column="76" selection-start-line="3" selection-start-column="76" selection-end-line="3" selection-end-column="76" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="mealDetailController.js" pinned="false" current="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/mealDetails/mealDetailController.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="2542">
-                    <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+                  <state vertical-scroll-proportion="1.6084906" vertical-offset="0" max-vertical-offset="2356">
+                    <caret line="55" column="42" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="42" />
                     <folding />
                   </state>
                 </provider>
@@ -56,18 +46,68 @@
       <file leaf-file-name="mealBuilderService.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/services/mealBuilderService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="833" max-vertical-offset="2201">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2201">
               <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mealDetailControllerSpec.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Tests/Specs/mealDetailControllerSpec.js">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3510759" vertical-offset="0" max-vertical-offset="1488">
-              <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+            <state vertical-scroll-proportion="-0.0" vertical-offset="558" max-vertical-offset="1612">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mealInformationController.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/mealInformation/mealInformationController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1550">
+              <caret line="29" column="32" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="alertService.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/services/alertService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1271">
+              <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mealDetailController.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/mealDetails/mealDetailController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2573">
+              <caret line="54" column="58" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navBar.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/layout/navBar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5070093" vertical-offset="0" max-vertical-offset="856">
+              <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="route-config.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/route-config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="1457">
+              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -83,55 +123,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/app.js">
+      <file leaf-file-name="mealEntryController.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/mealEntry/mealEntryController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
-              <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-              <folding>
-                <marker date="1407381863348" expanded="true" signature="11:205" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MealBuilderSpecTests.htm" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Tests/MealBuilderSpecTests.htm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.525" vertical-offset="447" max-vertical-offset="1829">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="243" max-vertical-offset="1116">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="angular-animate.min.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Tests/Scripts/angular-animate.min.js">
+      <file leaf-file-name="mealInformationControllerSpec.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Tests/Specs/mealInformationControllerSpec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="23" max-vertical-offset="837">
-              <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="angular-mocks.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Tests/Scripts/angular-mocks.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="67487">
-              <caret line="79" column="29" selection-start-line="79" selection-start-column="29" selection-end-line="79" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mealInformation.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/mealInformation/mealInformation.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.1" vertical-offset="490" max-vertical-offset="1333">
-              <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1829">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -157,7 +163,6 @@
         <option value="$PROJECT_DIR$/MealBuilderPlus.Tests/Specs/mealBuilderServiceSpec.js" />
         <option value="$PROJECT_DIR$/MealBuilderPlus.Web/Content/toastr.css" />
         <option value="$PROJECT_DIR$/MealBuilderPlus.Web/scripts/toastr.js" />
-        <option value="$PROJECT_DIR$/MealBuilderPlus.Web/app/mealEntry/mealEntryController.js" />
         <option value="$PROJECT_DIR$/MealBuilderPlus.Web/app/main/mainController.js" />
         <option value="$PROJECT_DIR$/MealBuilderPlus.Web/Content/animate.css" />
         <option value="$PROJECT_DIR$/MealBuilderPlus.Web/app/dirPagination.js" />
@@ -166,23 +171,25 @@
         <option value="$PROJECT_DIR$/MealBuilderPlus.Web/app/directives/dirPagination.js" />
         <option value="$PROJECT_DIR$/MealBuilderPlus.Web/app/mealHistory/mealHistoryController.js" />
         <option value="$PROJECT_DIR$/MealBuilderPlus.Web/app/mealHistory/mealhistory.html" />
-        <option value="$PROJECT_DIR$/MealBuilderPlus.Web/app/layout/navBar.html" />
         <option value="$PROJECT_DIR$/MealBuilderPlus.Web/app/mealEntry/mealentry.html" />
         <option value="$PROJECT_DIR$/MealBuilderPlus.Web/Content/custom.css" />
         <option value="$PROJECT_DIR$/MealBuilderPlus.Web/app/mealInformation/mealInformation.html" />
         <option value="$PROJECT_DIR$/MealBuilderPlus.Web/scripts/lodash.js" />
-        <option value="$PROJECT_DIR$/MealBuilderPlus.Web/index.html" />
         <option value="$PROJECT_DIR$/MealBuilderPlus.Web/app/services/mealBuilderService.js" />
         <option value="$PROJECT_DIR$/MealBuilderPlus.Web/app/mealDetails/mealDetails.html" />
-        <option value="$PROJECT_DIR$/MealBuilderPlus.Web/app/mealDetails/mealDetailController.js" />
-        <option value="$PROJECT_DIR$/MealBuilderPlus.Web/app/route-config.js" />
         <option value="$PROJECT_DIR$/MealBuilderPlus.Tests/Specs/mealHistoryControllerSpec.js" />
         <option value="$PROJECT_DIR$/MealBuilderPlus.Web/app/app.js" />
         <option value="$PROJECT_DIR$/MealBuilderPlus.Tests/Scripts/angular-animate.min..js" />
-        <option value="$PROJECT_DIR$/MealBuilderPlus.Web/app/mealInformation/mealInformationController.js" />
+        <option value="$PROJECT_DIR$/MealBuilderPlus.Web/index.html" />
         <option value="$PROJECT_DIR$/MealBuilderPlus.Tests/MealBuilderSpecTests.htm" />
+        <option value="$PROJECT_DIR$/MealBuilderPlus.Web/app/services/alertService.js" />
+        <option value="$PROJECT_DIR$/MealBuilderPlus.Web/app/mealEntry/mealEntryController.js" />
+        <option value="$PROJECT_DIR$/MealBuilderPlus.Web/app/mealInformation/mealInformationController.js" />
         <option value="$PROJECT_DIR$/MealBuilderPlus.Tests/Specs/mealDetailControllerSpec.js" />
         <option value="$PROJECT_DIR$/MealBuilderPlus.Tests/Specs/mealInformationControllerSpec.js" />
+        <option value="$PROJECT_DIR$/MealBuilderPlus.Web/app/mealDetails/mealDetailController.js" />
+        <option value="$PROJECT_DIR$/MealBuilderPlus.Web/app/route-config.js" />
+        <option value="$PROJECT_DIR$/MealBuilderPlus.Web/app/layout/navBar.html" />
       </list>
     </option>
   </component>
@@ -309,28 +316,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mealInformation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MealBuilderPlus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MealBuilderPlus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MealBuilderPlus.Web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="mealDetails" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -353,7 +338,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="directives" />
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MealBuilderPlus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MealBuilderPlus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MealBuilderPlus.Web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -427,6 +434,9 @@
     <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\briantroncone\Documents\Visual Studio 2013\Projects\MealBuilderPlus\MealBuilderPlus.Web\scripts" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\briantroncone\Documents\Visual Studio 2013\Projects\MealBuilderPlus\MealBuilderPlus.Web\app\directives" />
     </key>
@@ -507,7 +517,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32792208" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13066386" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13435195" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39935064" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -544,22 +554,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/mealInformation/mealInformation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/layout/navBar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="340">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/main/mainController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="425">
@@ -756,14 +750,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/layout/navBar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.525" vertical-offset="0" max-vertical-offset="589">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/main/main.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.1" vertical-offset="0" max-vertical-offset="310">
@@ -787,14 +773,6 @@
           <folding>
             <element signature="n#!!doc" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.425" vertical-offset="0" max-vertical-offset="1519">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -822,28 +800,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/mealEntry/mealEntryController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="251" max-vertical-offset="1147">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#49#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/mealDetails/mealDetails.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.475" vertical-offset="428" max-vertical-offset="1364">
           <caret line="17" column="109" selection-start-line="17" selection-start-column="109" selection-end-line="17" selection-end-column="109" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/route-config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="558" max-vertical-offset="1488">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -853,7 +813,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
           <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
           <folding>
-            <marker date="1407381863348" expanded="true" signature="11:205" placeholder="{...}" />
+            <marker date="1407381863348" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -862,56 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="67487">
           <caret line="79" column="29" selection-start-line="79" selection-start-column="29" selection-end-line="79" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Tests/Scripts/angular-animate.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="23" max-vertical-offset="837">
-          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/mealInformation/mealInformation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.1" vertical-offset="490" max-vertical-offset="1333">
-          <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/services/mealBuilderService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="833" max-vertical-offset="2201">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Tests/Specs/mealBuilderServiceSpec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="897">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/mealInformation/mealInformationController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46792454" vertical-offset="403" max-vertical-offset="1550">
-          <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Tests/MealBuilderSpecTests.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.525" vertical-offset="447" max-vertical-offset="1829">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -932,26 +842,114 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/mealDetails/mealDetailController.js">
+    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/mealInformation/mealInformation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="2542">
-          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+        <state vertical-scroll-proportion="-14.1" vertical-offset="490" max-vertical-offset="1333">
+          <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Tests/Specs/mealInformationControllerSpec.js">
+    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/scripts/angular-animate.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08773585" vertical-offset="0" max-vertical-offset="1240">
-          <caret line="3" column="76" selection-start-line="3" selection-start-column="76" selection-end-line="3" selection-end-column="76" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="860">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Tests/MealBuilderSpecTests.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.675" vertical-offset="451" max-vertical-offset="1860">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="558" max-vertical-offset="1612">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/services/alertService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1271">
+          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/mealEntry/mealEntryController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="243" max-vertical-offset="1116">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Tests/Specs/mealBuilderServiceSpec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="897">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/mealInformation/mealInformationController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1550">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/services/mealBuilderService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2201">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Tests/Specs/mealDetailControllerSpec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3510759" vertical-offset="0" max-vertical-offset="1488">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+        <state vertical-scroll-proportion="1.6084906" vertical-offset="0" max-vertical-offset="2356">
+          <caret line="55" column="42" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Tests/Specs/mealInformationControllerSpec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1829">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/mealDetails/mealDetailController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2573">
+          <caret line="54" column="58" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/route-config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="1457">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MealBuilderPlus.Web/app/layout/navBar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5070093" vertical-offset="0" max-vertical-offset="856">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
           <folding />
         </state>
       </provider>

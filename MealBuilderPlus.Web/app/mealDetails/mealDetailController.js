@@ -5,9 +5,9 @@
         .module("mealBuilderPlusApp")
         .controller('mealDetailController', mealDetailController);
 
-    mealDetailController.$inject = ['$routeParams', '$q','mealBuilderService'];
+    mealDetailController.$inject = ['$routeParams', '$q','mealBuilderService', 'alertService'];
 
-    function mealDetailController($routeParams, $q, mealBuilderService){
+    function mealDetailController($routeParams, $q, mealBuilderService, alertService){
         /* jshint validthis: true */
         var vm = this;
         var mealId = $routeParams.mealId;
@@ -44,7 +44,7 @@
                                 if(vm.availableIngredients.length === 0){
                                     vm.isAddingIngredients = false;
                                 }
-                                toastr.success('Ingredient Added Successfully!');
+                                alertService.withSuccess('Ingredient Added Successfully!');
                               }, onError);
         }
 
@@ -54,7 +54,8 @@
                 .then(function(){
                     vm.meal.ingredients.splice($index, 1);
                     vm.availableIngredients.push(ingredientToDelete);
-                    toastr.success('Ingredient Successfully Removed!');
+                    vm.isAddingIngredients = true;
+                    alertService.withSuccess('Ingredient Successfully Removed!');
                 }, onError);
         }
 
@@ -71,7 +72,7 @@
         }
 
         function onError(){
-            toastr.error('There was an error processing your request, please try again!');
+            alertService.withError('There was an error processing your request, please try again!');
         }
     }
 }());

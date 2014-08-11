@@ -1,6 +1,3 @@
-/**
- * Created by briantroncone on 7/29/2014.
- */
 (function(){
     "use strict";
 
@@ -8,9 +5,9 @@
         .module("mealBuilderPlusApp")
         .controller('mealEntryController', mealEntryController);
 
-    mealEntryController.$inject = ['mealBuilderService'];
+    mealEntryController.$inject = ['mealBuilderService', 'alertService'];
 
-    function mealEntryController(mealBuilderService){
+    function mealEntryController(mealBuilderService, alertService){
         /* jshint validthis: true */
         var vm = this;
         vm.meal = {};
@@ -21,13 +18,13 @@
         function saveMeal(){
             mealBuilderService.saveMeal(vm.meal)
                 .success(function(){
-                    toastr.success("Meal Successfully Saved!");
+                    alertService.withSuccess("Meal Successfully Saved!");
                     vm.meal = {};
                     vm.mealType = undefined;
                 })
                 .error(function(){
-                    toastr.error("Error saving meal!");
+                    alertService.withError("Error saving meal!");
                 });
-        };
+        }
     }
 }());

@@ -5,9 +5,9 @@
         .module('mealBuilderPlusApp')
         .controller('mealInformationController', mealInformationController);
 
-    mealInformationController.$inject = ['$location', 'mealBuilderService'];
+    mealInformationController.$inject = ['$location', 'mealBuilderService', 'alertService'];
 
-    function mealInformationController($location, mealBuilderService ) {
+    function mealInformationController($location, mealBuilderService, alertService) {
         /* jshint validthis: true */
         var vm = this;
         vm.mealList = [];
@@ -27,7 +27,7 @@
             var meal = vm.mealList[$index];
             return mealBuilderService.deleteMeal(meal.mealId)
                 .then(function(){
-                    //toastr.success("Meal deleted!");
+                    alertService.withSuccess("Meal deleted!");
                     vm.mealList.splice($index, 1);
                 }, onError);
         }
@@ -36,7 +36,7 @@
         }
 
         function onError(){
-            toastr.error('error!');
+            alertService.withError('error!');
         }
 
     }

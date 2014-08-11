@@ -9,7 +9,7 @@
             .when('/', {
                 templateUrl: 'app/main/main.html'
             })
-            .when('/mealentry', {
+            .when('/mealEntry', {
                 templateUrl: 'app/mealEntry/mealentry.html',
                 controller: 'mealEntryController',
                 controllerAs: 'vm'
@@ -34,9 +34,8 @@
                 controller: 'ingredientDetailController',
                 controllerAs: 'vm'
             })
-            .when('/mealgenerator', {
+            .when('/mealGenerator', {
                 templateUrl: 'app/mealGenerator/mealgenerator.html'
-            })
-        ;
+            });
     }
 }());
