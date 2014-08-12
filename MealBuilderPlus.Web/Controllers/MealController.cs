@@ -8,9 +8,7 @@ namespace MealBuilderPlus.Web.Controllers
     [RoutePrefix("api/meals")]
     public class MealController : BaseApiController
     {
-        public MealController(IMealBuilderPlusRepository repo) : base(repo)
-        {
-        }
+        public MealController(IMealBuilderPlusRepository repo) : base(repo){}
 
         [Route("")]
         public IHttpActionResult Get()
@@ -33,6 +31,23 @@ namespace MealBuilderPlus.Web.Controllers
             
             return Ok(meal);
         }
+
+        [Route("{mealId:int}")]
+        public IHttpActionResult Delete(int mealId)
+        {
+            var meal = Repository.GetMeal(mealId);
+            if (meal == null)
+            {
+                return NotFound();
+            }
+
+            if (Repository.DeleteMeal(mealId) && Repository.SaveAll())
+            {
+                return Ok();
+            }
+            return BadRequest();
+        }
+
         [Route("")]
         public IHttpActionResult Post([FromBody] Meal meal)
         {
@@ -50,21 +65,7 @@ namespace MealBuilderPlus.Web.Controllers
             }
             return BadRequest();
         }
-        [Route("{mealId:int}")]
-        public IHttpActionResult Delete(int mealId)
-        {
-            var meal = Repository.GetMeal(mealId);
-            if (meal == null)
-            {
-                return NotFound();
-            }
-
-            if (Repository.DeleteMeal(mealId) && Repository.SaveAll())
-            {
-                return Ok();
-            }
-            return BadRequest();
-        }
+        
 
     }
 }

@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Linq;
 using System.Web.Http;
 using MealBuilderPlus.Data;
-using MealBuilderPlus.Web.Models;
+using MealBuilderPlus.Data.Entities;
 
 namespace MealBuilderPlus.Web.Controllers
 {
     [RoutePrefix("api/ingredients")]
     public class IngredientController : BaseApiController
     {
-        public IngredientController(IMealBuilderPlusRepository repo) : base(repo)
-        {
-        }
+        public IngredientController(IMealBuilderPlusRepository repo) : base(repo){}
+
         [Route("")]
         public IHttpActionResult Get()
         {
@@ -29,50 +24,41 @@ namespace MealBuilderPlus.Web.Controllers
 
         }
 
-        [Route("{ingredientId:int}/meals/{mealId:int}")]
-        public IHttpActionResult Post(int ingredientId, int mealId)
+        [Route("{ingredientId:int}")]
+        public IHttpActionResult Delete(int ingredientId)
         {
-            var mealToUpdate = Repository.GetMeal(mealId);
             var ingredient = Repository.GetIngredient(ingredientId);
-
-            if (ingredient == null || mealToUpdate == null)
+            if (ingredient == null)
             {
-                return BadRequest("There was an error adding your ingredient. One of the entities was not found.");
+                return NotFound();
             }
-            
+
+            if (Repository.DeleteMeal(ingredientId) && Repository.SaveAll())
+            {
+                return Ok();
+            }
+            return BadRequest();
+
+        }
+
+        [Route("")]
+        public IHttpActionResult Post([FromBody] Ingredient ingredient)
+        {
+            var newIngredient = Repository.Insert(ingredient);
             try
             {
-                mealToUpdate.Ingredients.Add(ingredient);
-                Repository.SaveAll();
+                if (newIngredient != null && Repository.SaveAll())
+                {
+                    return Created(Request.RequestUri + newIngredient.IngredientId.ToString(), newIngredient);
+                }
             }
             catch
             {
-                
+                //TODO Log
             }
-            return Ok();
+            return BadRequest();
         }
 
-        [Route("{ingredientId:int}/meals/{mealId:int}")]
-        public IHttpActionResult Delete(int ingredientId, int mealId)
-        {
-            var mealToUpdate = Repository.GetMeal(mealId);
-            var ingredient = Repository.GetIngredient(ingredientId);
-
-            if (ingredient == null || mealToUpdate == null)
-            {
-                return BadRequest("There was an error deleting your ingredient. One of the entities was not found.");
-            }
-
-            try
-            {
-                mealToUpdate.Ingredients.Remove(ingredient);
-                Repository.SaveAll();
-            }
-            catch
-            {
-
-            }
-            return Ok();
-        }
+        
     }
 }

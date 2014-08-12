@@ -53,16 +53,16 @@ namespace MealBuilderPlus.Data
             }
         }
 
-        public bool Insert(Ingredient ingredient)
+        public Ingredient Insert(Ingredient ingredient)
         {
             try
             {
-                _context.Ingredients.Add(ingredient);
-                return true;
+                return _context.Ingredients.Add(ingredient);
+                
             }
             catch
             {
-                return false;
+                return null;
             };
         }
 
