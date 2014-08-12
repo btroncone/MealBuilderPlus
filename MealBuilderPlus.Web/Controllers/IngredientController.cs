@@ -25,6 +25,19 @@ namespace MealBuilderPlus.Web.Controllers
         }
 
         [Route("{ingredientId:int}")]
+        public IHttpActionResult Get(int ingredientId)
+        {
+            var ingredient = ModelFactory.CreateIngredientWithMeal(Repository.GetIngredient(ingredientId));
+
+            if (ingredient != null)
+            {
+                return Ok(ingredient);
+            }
+            
+            return BadRequest();
+        }
+
+        [Route("{ingredientId:int}")]
         public IHttpActionResult Delete(int ingredientId)
         {
             var ingredient = Repository.GetIngredient(ingredientId);

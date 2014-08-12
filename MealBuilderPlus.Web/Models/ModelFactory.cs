@@ -37,9 +37,25 @@ namespace MealBuilderPlus.Web.Models
             {
                 IngredientId = ingredient.IngredientId,
                 Name = ingredient.Name,
-                CheckPantry = ingredient.CheckPantry                          
+                CheckPantry = ingredient.CheckPantry,                         
             };
 
+        }
+
+        public IngredientModel CreateIngredientWithMeal(Ingredient ingredient)
+        {
+            return new IngredientModel
+            {
+                IngredientId = ingredient.IngredientId,
+                Name = ingredient.Name,
+                CheckPantry = ingredient.CheckPantry,
+                Meals = ingredient.Meals.Select(m => new MealModel
+                {
+                    Name = m.Name,
+                    LastEaten = m.LastEaten,
+                    Description = m.Description
+                })
+            };
         }
 
     }

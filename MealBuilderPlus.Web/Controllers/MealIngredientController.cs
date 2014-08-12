@@ -3,7 +3,7 @@ using MealBuilderPlus.Data;
 
 namespace MealBuilderPlus.Web.Controllers
 {
-    [RoutePrefix("api/meals")]
+    [RoutePrefix("api/ingredients")]
     public class MealIngredientController : BaseApiController
     {
         public MealIngredientController(IMealBuilderPlusRepository repo) : base(repo){}
