@@ -33,12 +33,11 @@ namespace MealBuilderPlus.Web.Controllers
                 return NotFound();
             }
 
-            if (Repository.DeleteMeal(ingredientId) && Repository.SaveAll())
+            if (Repository.DeleteIngredient(ingredientId) && Repository.SaveAll())
             {
                 return Ok();
             }
             return BadRequest();
-
         }
 
         [Route("")]

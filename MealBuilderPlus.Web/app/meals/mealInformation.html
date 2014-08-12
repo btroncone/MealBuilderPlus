@@ -25,7 +25,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr dir-paginate="meal in vm.mealList | filter: meal.name | orderBy: mealSortOrder | itemsPerPage: 5">
+        <tr dir-paginate="meal in vm.mealList | filter: meal.name | orderBy: mealSortOrder | itemsPerPage: 10">
             <td>{{meal.name}}</td>
             <td>{{meal.mealType}}</td>
             <td>{{meal.lastEaten | date}}</td>

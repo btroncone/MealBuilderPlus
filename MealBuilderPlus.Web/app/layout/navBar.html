@@ -5,9 +5,20 @@
     <div class="navbar-collapse collapse">
         <nav class="navbar-logo">
             <ul class="nav navbar-nav">
-                <li><a href="#/mealInformation">Meal Information</a></li>
-                <li><a href="#/mealEntry">Add Meals</a></li>
-                <li><a href="#/ingredientEntry">Add Ingredients</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Meals<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#/mealEntry">Add Meals</a></li>
+                        <li><a href="#/mealInformation">Meal Information</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ingredients<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#/ingredientEntry">Add Ingredients</a></li>
+                        <li><a href="#/ingredientInformation">Ingredient Information</a></li>
+                    </ul>
+                </li>
                 <li><a href="#/mealGenerator">Generate Meals</a></li>
             </ul>
         </nav>

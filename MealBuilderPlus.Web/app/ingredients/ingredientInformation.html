@@ -1,0 +1,27 @@
+<h1>Ingredient Information</h1>
+<div class="row">
+    <div class="col-xs-4 margin-bottom-10">
+        <label for="search">Search:</label>
+        <input ng-model="ingredient.name" id="search" class="form-control" placeholder="Name...">
+    </div>
+    <a href="#/ingredientEntry" class="btn btn-success margin-top-25">Add A Ingredient</a>
+</div>
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+    <tr>
+        <td>Name</td>
+        <td>Check Pantry</td>
+        <td>Details</td>
+        <td>Delete</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr dir-paginate="ingredient in vm.ingredientList | filter: ingredient.name | orderBy: ingredientSortOrder | itemsPerPage: 10">
+        <td>{{ingredient.name}}</td>
+        <td>{{ingredient.checkPantry | trueFalse}}</td>
+        <td><button type="button" class="btn btn-success btn-sm" ng-click="vm.getIngredientDetails(ingredient)">Details</button></td>
+        <td><button type="button" class="btn btn-danger btn-sm" ng-click="vm.deleteIngredient($index)">Delete</button></td>
+    </tr>
+    </tbody>
+</table>
+<dir-pagination-controls></dir-pagination-controls>

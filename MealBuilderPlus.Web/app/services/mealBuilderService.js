@@ -15,6 +15,9 @@
             saveMeal: saveMeal,
             deleteMeal: deleteMeal,
             getAllIngredients: getAllIngredients,
+            getIngredient: getIngredient,
+            saveIngredient: saveIngredient,
+            deleteIngredient: deleteIngredient,
             addIngredientToMeal: addIngredientToMeal,
             deleteIngredientFromMeal: deleteIngredientFromMeal
         };
@@ -50,6 +53,21 @@
                 });
         }
 
+        function saveIngredient(ingredient){
+            return $http.post('/api/ingredients', ingredient);
+        }
+
+        function getIngredient(ingredientId){
+            return $http.get('/api/ingredients/' + ingredientId)
+                .then(function(response){
+                    return response.data;
+                });
+        }
+
+        function deleteIngredient(ingredientId){
+            return $http.delete('/api/ingredients/' + ingredientId);
+        }
+
         function addIngredientToMeal(ingredientId, mealId){
             return $http.post('/api/ingredients/' + ingredientId + '/meals/' + mealId );
         }
@@ -57,10 +75,5 @@
         function deleteIngredientFromMeal(ingredientId, mealId){
             return $http.delete('/api/ingredients/' + ingredientId + '/meals/' + mealId);
         }
-
-
-        //#region Internal Methods        
-
-        //#endregion
     }
 }());

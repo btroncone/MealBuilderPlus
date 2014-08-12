@@ -1,0 +1,17 @@
+<div class="margin-top-20">
+    <form role="form" ng-submit="vm.saveIngredient()">
+        <div class="form-group">
+            <label for="ingredientName">Ingredient Name</label>
+            <input type="text" ng-model="vm.ingredient.name" class="form-control" id="ingredientName" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="vm.ingredient.checkPantry"> Check Pantry?
+                </label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+        <a href="#/ingredientInformation" class="btn btn-danger">Return to Ingredient Information</a>
+    </form>
+</div>

@@ -10,32 +10,37 @@
                 templateUrl: 'app/main/main.html'
             })
             .when('/mealEntry', {
-                templateUrl: 'app/mealEntry/mealentry.html',
+                templateUrl: 'app/meals/mealEntry.html',
                 controller: 'mealEntryController',
                 controllerAs: 'vm'
             })
             .when('/mealInformation', {
-                templateUrl: 'app/mealInformation/mealInformation.html',
+                templateUrl: 'app/meals/mealInformation.html',
                 controller: 'mealInformationController',
                 controllerAs: 'vm'
             })
             .when('/meal/:mealId', {
-                templateUrl: 'app/mealDetails/mealDetails.html',
+                templateUrl: 'app/meals/mealDetails.html',
                 controller: 'mealDetailController',
                 controllerAs: 'vm'
             })
             .when('/ingredientInformation', {
-                templateUrl: 'app/ingredientInformation/ingredientInformation.html',
+                templateUrl: 'app/ingredients/ingredientInformation.html',
                 controller: 'ingredientInformationController',
                 controllerAs: 'vm'
             })
-            .when('/ingredientInformation/:ingredientId', {
-                templateUrl: 'app/ingredientDetails/ingredientDetails.html',
+            .when('/ingredientEntry', {
+                templateUrl: 'app/ingredients/ingredientEntry.html',
+                controller: 'ingredientEntryController',
+                controllerAs: 'vm'
+            })
+            .when('/ingredient/:ingredientId', {
+                templateUrl: 'app/ingredients/ingredientDetails.html',
                 controller: 'ingredientDetailController',
                 controllerAs: 'vm'
             })
             .when('/mealGenerator', {
-                templateUrl: 'app/mealGenerator/mealgenerator.html'
+                templateUrl: 'app/meals/mealGenerator.html'
             });
     }
 }());
