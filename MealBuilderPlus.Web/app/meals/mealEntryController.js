@@ -12,6 +12,7 @@
         var vm = this;
         vm.meal = {};
         vm.mealType = undefined;
+        //TODO Pull from DB if more meal types needed in future
         vm.mealTypes = ["Chicken", "Beef", "Fish", "Other"];
         vm.saveMeal = saveMeal;
 

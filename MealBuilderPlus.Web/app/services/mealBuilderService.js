@@ -75,5 +75,7 @@
         function deleteIngredientFromMeal(ingredientId, mealId){
             return $http.delete('/api/ingredients/' + ingredientId + '/meals/' + mealId);
         }
+
+
     }
 }());

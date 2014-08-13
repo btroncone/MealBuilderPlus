@@ -1,1 +1,21 @@
-<h1>Meal Generator {{test}}</h1>
+<div class="row">
+    <h1 class="margin-bottom-10">Meal Generator {{test}}</h1>
+    <h3>How many meals will you be having this week?</h3>
+    <div class="btn-group">
+        <label class="btn btn-primary" ng-model="vm.mealsToAdd" ng-click="vm.addMealTypes(1)" btn-radio="'1'">One</label>
+        <label class="btn btn-primary" ng-model="vm.mealsToAdd" ng-click="vm.addMealTypes(2)" btn-radio="'2'">Two</label>
+        <label class="btn btn-primary" ng-model="vm.mealsToAdd" ng-click="vm.addMealTypes(3)" btn-radio="'3'">Three</label>
+        <label class="btn btn-primary" ng-model="vm.mealsToAdd" ng-click="vm.addMealTypes(4)" btn-radio="'4'">Four</label>
+    </div>
+</div>
+<div class="row" ng-if="vm.mealsToAdd > 0">
+    <h3>Please enter the desired breakdown of these meals.</h3>
+    <div ng-repeat="type in vm.requestedMealTypes">
+        <p></p><span class="label label-info">Meal #{{$index + 1}}</span></p>
+        <div class="btn-group" ng-repeat="mealType in vm.mealTypes">
+            <label class="btn btn-primary"  ng-model="type.mealType" btn-radio="'{{mealType}}'">{{mealType}}</label>
+        </div>
+    </div>
+    <button class="btn btn-default btn-success margin-top-20" ng-click="vm.generateMeals()">Generate Weekly Meals!</button>
+</div>
+

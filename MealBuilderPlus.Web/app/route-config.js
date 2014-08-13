@@ -40,7 +40,9 @@
                 controllerAs: 'vm'
             })
             .when('/mealGenerator', {
-                templateUrl: 'app/meals/mealGenerator.html'
+                templateUrl: 'app/meals/mealGenerator.html',
+                controller: 'mealGeneratorController',
+                controllerAs: 'vm'
             });
     }
 }());
