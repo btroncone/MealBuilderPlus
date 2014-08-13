@@ -13,11 +13,11 @@
         var ingredientId = $routeParams.ingredientId;
         vm.ingredient = {};
 
-
         activate();
         function activate(){
             return mealBuilderService.getIngredient(ingredientId)
                 .then(function(data){
+                    console.log(data);
                     vm.ingredient = data;
                     return vm.ingredient;
                 }, onError);

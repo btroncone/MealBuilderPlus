@@ -32,7 +32,7 @@
                 }, onError);
         }
         function getIngredientDetails(ingredient){
-            $location.url('/ingredients/' + ingredient.ingredientId);
+            $location.url('/ingredient/' + ingredient.ingredientId);
         }
 
         function onError(){

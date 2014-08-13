@@ -14,4 +14,8 @@ div[ng-view].ng-enter {
     -webkit-animation: pulse 1s;
     animation: pulse 1s;
 }
-
+.ng-hide-add {
+    -webkit-animation: flipOutX 1.5s;
+    animation: flipOutX 1.5s;
+    display: block !important;
+}

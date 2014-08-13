@@ -1,5 +1,6 @@
 <div class="page-header">
     <h1>{{vm.meal.name}} <small ng-show="vm.isLastEaten">Last Eaten: {{vm.meal.lastEaten | date}}</small></h1>
+    <h4>Description: <small>{{vm.meal.description}}</small></h4>
 </div>
 <button class="btn btn-default btn-success margin-bottom-10" ng-click="vm.addIngredients()">Add Ingredients</button>
 <a href="#/mealInformation" class="btn btn-default btn-danger margin-bottom-10">Back To Meals</a>
@@ -21,8 +22,8 @@
     </table>
 </div>
 <div class="panel panel-default" ng-show="vm.isAddingIngredients">
-    <div class="panel-heading">Available Ingredients</div>
-    <table class="table">
+    <div class="panel-heading">Available Ingredients <span ng-if="!vm.availableIngredients.length"> - There are no more ingredients to add.</span></div>
+    <table class="table" ng-if="vm.availableIngredients.length">
         <thead>
             <tr>
                 <th>Name</th>

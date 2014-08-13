@@ -1,0 +1,9 @@
+<div class="page-header">
+    <h1>{{vm.ingredient.name}} <small ng-if="!vm.ingredient.meals.length"> (Not currently in any meals.)</small></h1>
+</div>
+<div class="panel panel-default" ng-if="vm.ingredient.meals.length">
+    <div class="panel-heading">{{vm.ingredient.name}} is currently included in {{vm.ingredient.meals.length}} meal(s)</div>
+    <ul class="list-group" ng-repeat="meal in vm.ingredient.meals">
+        <li class="list-group-item">{{meal.name}}</li>
+    </ul>
+</div>
