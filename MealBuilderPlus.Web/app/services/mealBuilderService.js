@@ -14,12 +14,15 @@
             getMeal: getMeal,
             saveMeal: saveMeal,
             deleteMeal: deleteMeal,
+            updateMeal: updateMeal,
             getAllIngredients: getAllIngredients,
             getIngredient: getIngredient,
             saveIngredient: saveIngredient,
             deleteIngredient: deleteIngredient,
+            updateIngredient: updateIngredient,
             addIngredientToMeal: addIngredientToMeal,
-            deleteIngredientFromMeal: deleteIngredientFromMeal
+            deleteIngredientFromMeal: deleteIngredientFromMeal,
+            acceptMeals: acceptMeals
         };
 
         return service;
@@ -46,6 +49,10 @@
             return $http.delete('/api/meals/' + mealId);
         }
 
+        function updateMeal(meal){
+            return $http.put('/api/meals', meal);
+        }
+
         function getAllIngredients(){
             return $http.get('/api/ingredients')
                 .then(function(response){
@@ -68,12 +75,25 @@
             return $http.delete('/api/ingredients/' + ingredientId);
         }
 
+        function updateIngredient(ingredient){
+            var updatedIngredient = {
+                ingredientId: ingredient.ingredientId,
+                name: ingredient.name,
+                checkPantry: ingredient.checkPantry
+            };
+            return $http.put('/api/ingredients', updatedIngredient);
+        }
+
         function addIngredientToMeal(ingredientId, mealId){
             return $http.post('/api/ingredients/' + ingredientId + '/meals/' + mealId );
         }
 
         function deleteIngredientFromMeal(ingredientId, mealId){
             return $http.delete('/api/ingredients/' + ingredientId + '/meals/' + mealId);
+        }
+
+        function acceptMeals(meals){
+            return $http.post('/api/meals', meals);
         }
 
 

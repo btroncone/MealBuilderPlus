@@ -13,8 +13,9 @@
         vm.ingredientList = [];
         vm.getIngredientDetails = getIngredientDetails;
         vm.deleteIngredient = deleteIngredient;
-        activate();
+        vm.editIngredient = editIngredient;
 
+        activate();
         function activate(){
             return mealBuilderService.getAllIngredients()
                 .then(function(data){
@@ -31,8 +32,13 @@
                     vm.ingredientList.splice($index, 1);
                 }, onError);
         }
+
         function getIngredientDetails(ingredient){
             $location.url('/ingredient/' + ingredient.ingredientId);
+        }
+
+        function editIngredient(ingredient){
+            $location.url('/ingredientEdit/' + ingredient.ingredientId);
         }
 
         function onError(){

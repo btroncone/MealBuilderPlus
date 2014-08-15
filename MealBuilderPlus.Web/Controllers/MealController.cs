@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Web.Http;
 using MealBuilderPlus.Data;
 using MealBuilderPlus.Data.Entities;
@@ -13,17 +14,12 @@ namespace MealBuilderPlus.Web.Controllers
         [Route("")]
         public IHttpActionResult Get()
         {
-            var meals = Repository.GetMeals().Select(m => new
-            {
-                m.LastEaten,
-                m.Description,
-                m.MealId,
-                m.MealType,
-                m.Name
-            });
-
+            var meals = Repository.GetMeals()
+                                  .ToList()
+                                  .Select(m => ModelFactory.Create(m));
             return Ok(meals);
         }
+
         [Route("{mealId:int}")]
         public IHttpActionResult Get(int mealId)
         {
@@ -61,11 +57,26 @@ namespace MealBuilderPlus.Web.Controllers
             }
             catch
             {
-                
+               //TODO Log 
             }
             return BadRequest();
         }
-        
 
+        [Route("")]
+        public IHttpActionResult Put([FromBody] Meal meal)
+        {
+            try
+            {
+                if (Repository.Update(meal) && Repository.SaveAll())
+                {
+                    return Ok();
+                }
+            }
+            catch
+            {
+                //TODO Log
+            }
+            return BadRequest("There was an error updating the entity!");
+        }
     }
 }

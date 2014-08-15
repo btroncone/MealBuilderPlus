@@ -17,15 +17,20 @@
 
         function getMealTypes(meals){
             return _(meals).chain()
-                .pluck("mealType")
-                .uniq()
-                .value();
+                           .pluck("mealType")
+                           .uniq()
+                           .value();
         }
 
         function generateWeeklyMeals(meals, requestedMealTypes) {
-            var generatedMeals = [];
+            //var weeklyMealsAndIngredients = [];
+            return getMealsFromMealTypes(meals, requestedMealTypes);
+            //var ingredientList = compileIngredients(generatedMeals);
 
+            //weeklyMealsAndIngredients.push(generatedMeals);
+            //weeklyMealsAndIngredients.push(ingredientList);
 
+            //return generatedMeals;
         }
 
         function checkAvailability(meals, requestedMealTypes){
@@ -33,14 +38,30 @@
             _(requestedMealTypes).forEach(function(requestedType){
                 var requestedCount = _.where(requestedMealTypes, {'mealType': requestedType.mealType});
                 var mealCount = _.where(meals, {'mealType': requestedType.mealType});
-                console.log(requestedCount.length);
-                console.log(mealCount.length);
                 if(requestedCount.length > mealCount.length){
                     status.push("There are not enough " + requestedType.mealType + " meals to support your request.");
                 }
-
             });
             return status;
+        }
+
+        function getMealsFromMealTypes(meals, requestedMealTypes){
+            var selectedMeals = [];
+            var mealsToCheck = _.clone(meals);
+            _(requestedMealTypes).forEach(function(requestedType){
+                var meal = _(mealsToCheck).chain()
+                                   .where({'mealType': requestedType.mealType})
+                                   .shuffle()
+                                   .first()
+                                   .value();
+                selectedMeals.push(meal);
+                mealsToCheck.splice(_.findIndex(mealsToCheck, {'mealId': meal.mealId}), 1);
+            });
+            return selectedMeals;
+        }
+
+        function compileIngredients(generatedMeals){
+
         }
     }
 })();

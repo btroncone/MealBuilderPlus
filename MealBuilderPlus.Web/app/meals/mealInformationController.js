@@ -13,8 +13,9 @@
         vm.mealList = [];
         vm.getMealDetails = getMealDetails;
         vm.deleteMeal = deleteMeal;
-        activate();
+        vm.editMeal = editMeal;
 
+        activate();
         function activate(){
             return mealBuilderService.getAllMeals()
                 .then(function(data){
@@ -31,8 +32,13 @@
                     vm.mealList.splice($index, 1);
                 }, onError);
         }
+
         function getMealDetails(meal){
             $location.url('/meal/' + meal.mealId);
+        }
+
+        function editMeal(meal){
+            $location.url('/mealEdit/' + meal.mealId);
         }
 
         function onError(){

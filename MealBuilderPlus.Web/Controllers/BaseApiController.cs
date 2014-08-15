@@ -26,14 +26,7 @@ namespace MealBuilderPlus.Web.Controllers
 
         protected ModelFactory ModelFactory
         {
-            get
-            {
-                if (_modelFactory == null)
-                {
-                    _modelFactory = new ModelFactory(Repository);
-                }
-                return _modelFactory;
-            }
+            get { return _modelFactory ?? (_modelFactory = new ModelFactory()); }
         }
     }
 }

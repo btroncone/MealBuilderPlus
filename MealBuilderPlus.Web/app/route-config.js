@@ -24,6 +24,11 @@
                 controller: 'mealDetailController',
                 controllerAs: 'vm'
             })
+            .when('/mealEdit/:mealId', {
+                templateUrl: 'app/meals/mealEdit.html',
+                controller: 'mealEditController',
+                controllerAs: 'vm'
+            })
             .when('/ingredientInformation', {
                 templateUrl: 'app/ingredients/ingredientInformation.html',
                 controller: 'ingredientInformationController',
@@ -37,6 +42,11 @@
             .when('/ingredient/:ingredientId', {
                 templateUrl: 'app/ingredients/ingredientDetails.html',
                 controller: 'ingredientDetailController',
+                controllerAs: 'vm'
+            })
+            .when('/ingredientEdit/:ingredientId', {
+                templateUrl: 'app/ingredients/ingredientEdit.html',
+                controller: 'ingredientEditController',
                 controllerAs: 'vm'
             })
             .when('/mealGenerator', {

@@ -20,7 +20,8 @@
             <td>Name</td>
             <td>Meal Type</td>
             <td>Last Eaten</td>
-            <td>Details</td>
+            <td>Ingredients</td>
+            <td>Edit</td>
             <td>Delete</td>
         </tr>
     </thead>
@@ -29,7 +30,8 @@
             <td>{{meal.name}}</td>
             <td>{{meal.mealType}}</td>
             <td>{{meal.lastEaten | date}}</td>
-            <td><button type="button" class="btn btn-success btn-sm" ng-click="vm.getMealDetails(meal)">Details</button></td>
+            <td><button type="button" class="btn btn-success btn-sm" ng-click="vm.getMealDetails(meal)">Ingredients</button></td>
+            <td><button type="button" class="btn btn-info btn-sm" ng-click="vm.editMeal(meal)">Edit Meal</button></td>
             <td><button type="button" class="btn btn-danger btn-sm" ng-click="vm.deleteMeal($index)">Delete</button></td>
         </tr>
     </tbody>

@@ -41,7 +41,6 @@ namespace MealBuilderPlus.Web.Controllers
             {
                 return BadRequest("There was an error deleting your ingredient. One of the entities was not found.");
             }
-
             try
             {
                 mealToUpdate.Ingredients.Remove(ingredient);

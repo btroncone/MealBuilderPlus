@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Diagnostics;
+using System.Linq;
 using System.Web.Http;
 using MealBuilderPlus.Data;
 using MealBuilderPlus.Data.Entities;
@@ -21,7 +23,6 @@ namespace MealBuilderPlus.Web.Controllers
             });
 
             return Ok(result);
-
         }
 
         [Route("{ingredientId:int}")]
@@ -71,6 +72,21 @@ namespace MealBuilderPlus.Web.Controllers
             return BadRequest();
         }
 
-        
+        [Route("")]
+        public IHttpActionResult Put([FromBody] Ingredient ingredient)
+        {
+            try
+            {
+                if (Repository.Update(ingredient) && Repository.SaveAll())
+                {
+                    return Ok();
+                }
+            }
+            catch
+            {
+                //TODO Log
+            }
+            return BadRequest("There was an error updating the entity!");
+        }
     }
 }

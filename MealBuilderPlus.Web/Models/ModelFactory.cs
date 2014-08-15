@@ -10,13 +10,6 @@ namespace MealBuilderPlus.Web.Models
 {
     public class ModelFactory
     {
-        private readonly IMealBuilderPlusRepository _repo;
-
-        public ModelFactory(IMealBuilderPlusRepository repo)
-        {
-            _repo = repo;
-        }
-
         public MealModel Create(Meal meal)
         {
             return new MealModel

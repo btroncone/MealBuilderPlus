@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
+using System.Diagnostics;
 using System.Linq;
 using MealBuilderPlus.Data.Entities;
 
@@ -20,7 +23,7 @@ namespace MealBuilderPlus.Data
 
         public IQueryable<Meal> GetMeals()
         {
-            return _context.Meals;
+            return _context.Meals.Include("Ingredients");
         }
 
         public Meal GetMealByType(MealTypes mealType)
@@ -68,12 +71,12 @@ namespace MealBuilderPlus.Data
 
         public bool Update(Meal meal)
         {
-            throw new System.NotImplementedException();
+            return UpdateEntity(_context.Meals, meal);
         }
 
         public bool Update(Ingredient ingredient)
         {
-            throw new System.NotImplementedException();
+            return UpdateEntity(_context.Ingredients, ingredient);
         }
 
         public bool DeleteMeal(int id)
@@ -115,6 +118,19 @@ namespace MealBuilderPlus.Data
         public bool SaveAll()
         {
             return _context.SaveChanges() > 0;
+        }
+
+        bool UpdateEntity<T>(DbSet<T> dbSet, T entity) where T : class
+        {
+            try
+            {
+                dbSet.AttachAsModified(entity, _context);
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
         }
     }
 }

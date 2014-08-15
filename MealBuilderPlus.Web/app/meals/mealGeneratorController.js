@@ -5,24 +5,31 @@
         .module("mealBuilderPlusApp")
         .controller("mealGeneratorController", mealGeneratorController);
 
-    mealGeneratorController.$inject = ["mealBuilderService", "mealGeneratorService", "alertService"];
+    mealGeneratorController.$inject = ["$timeout","mealBuilderService", "mealGeneratorService", "alertService"];
 
-    function mealGeneratorController(mealBuilderService, mealGeneratorService, alertService){
+    function mealGeneratorController($timeout, mealBuilderService, mealGeneratorService, alertService){
         /* jshint validthis: true */
         var vm = this;
         vm.meals = {};
-        vm.mealsToAdd = 0;
         vm.mealTypes = [];
         vm.requestedMealTypes = [];
         vm.weeklyMeals = [];
+        vm.mealsToAdd = 0;
         vm.addMealTypes = addMealTypes;
         vm.generateMeals = generateMeals;
+        vm.reset = reset;
+        vm.acceptMeals = acceptMeals;
+        //Need both to get proper UI transition with meal generation
+        vm.mealsGenerated = false;
+        vm.mealsNotGenerated = false;
 
         activate();
         function activate(){
+            //TODO Use route resolve
             return mealBuilderService.getAllMeals()
                 .then(function(data){
                     vm.meals = data;
+                    vm.mealsNotGenerated = vm.meals.length > 0;
                     vm.mealTypes = mealGeneratorService.getMealTypes(vm.meals);
                 }, onError);
 
@@ -36,12 +43,34 @@
         }
 
         function generateMeals(){
-            var status = mealGeneratorService.checkAvailability(vm.meal, vm.requestedMealTypes);
+            var status = mealGeneratorService.checkAvailability(vm.meals, vm.requestedMealTypes);
             if(status.length === 0) {
-                vm.weeklyMeals = mealGeneratorService.generateMeals(vm.meals, vm.requestedMealTypes);
+                vm.weeklyMeals = mealGeneratorService.generateWeeklyMeals(vm.meals, vm.requestedMealTypes);
+                vm.mealsNotGenerated = false;
+                $timeout(function(){
+                    vm.mealsGenerated = true;
+                }, 2000);
             }else{
                 alertService.withError(status[0]);
             }
+        }
+
+        function reset(){
+            vm.mealsGenerated = false;
+
+            $timeout(function(){
+                vm.mealsNotGenerated = true;
+                vm.mealsToAdd = 0;
+            }, 2000);
+        }
+
+        function acceptMeals(){
+            mealBuilderService.acceptMeals(vm.weeklyMeals)
+                .then(function(){
+                    alertService.withSuccess("Your meals have been accepted!");
+                }, function(){
+                    alertService.withError("Error! Please try again!");
+                });
         }
 
         function onError(){
