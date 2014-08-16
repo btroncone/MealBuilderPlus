@@ -12,9 +12,16 @@
         var vm = this;
         vm.meal = {};
         vm.mealType = undefined;
-        //TODO Pull from DB if more meal types needed in future
-        vm.mealTypes = ["Chicken", "Beef", "Fish", "Other"];
+        vm.mealTypes = [];
         vm.saveMeal = saveMeal;
+
+        activate();
+        function activate(){
+            return mealBuilderService.getMealTypes()
+                .then(function(data){
+                    vm.mealTypes = data;
+                });
+        }
 
         function saveMeal(){
             mealBuilderService.saveMeal(vm.meal)

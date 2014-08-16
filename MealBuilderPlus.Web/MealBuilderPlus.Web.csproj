@@ -124,13 +124,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\directives\dirPagination.js" />
+    <Content Include="app\directives\dirPagination.tpl.html" />
+    <Content Include="app\filters\trueFalseFilter.js" />
+    <Content Include="app\ingredients\ingredientDetailController.js" />
+    <Content Include="app\ingredients\ingredientDetails.html" />
+    <Content Include="app\ingredients\ingredientEdit.html" />
+    <Content Include="app\ingredients\ingredientEditController.js" />
+    <Content Include="app\ingredients\ingredientEntry.html" />
+    <Content Include="app\ingredients\ingredientEntryController.js" />
+    <Content Include="app\ingredients\ingredientInformation.html" />
+    <Content Include="app\ingredients\ingredientInformationController.js" />
     <Content Include="app\layout\navBar.html" />
     <Content Include="app\main\main.html" />
     <Content Include="app\main\mainController.js" />
-    <Content Include="app\mealEntry\mealentry.html" />
-    <Content Include="app\mealGenerator\mealgenerator.html" />
-    <Content Include="app\mealHistory\mealhistory.html" />
-    <Content Include="app\mealHistory\mealHistoryController.js" />
+    <Content Include="app\meals\mealDetailController.js" />
+    <Content Include="app\meals\mealDetails.html" />
+    <Content Include="app\meals\mealEdit.html" />
+    <Content Include="app\meals\mealEditController.js" />
+    <Content Include="app\meals\mealEntry.html" />
+    <Content Include="app\meals\mealEntryController.js" />
+    <Content Include="app\meals\mealGenerator.html" />
+    <Content Include="app\meals\mealGeneratorController.js" />
+    <Content Include="app\meals\mealInformation.html" />
+    <Content Include="app\meals\mealInformationController.js" />
     <Content Include="app\services\mealBuilderService.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -167,6 +184,7 @@
     <Compile Include="Controllers\IngredientController.cs" />
     <Compile Include="Controllers\MealController.cs" />
     <Compile Include="Controllers\MealIngredientController.cs" />
+    <Compile Include="Controllers\MealTypeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

@@ -15,6 +15,7 @@
             saveMeal: saveMeal,
             deleteMeal: deleteMeal,
             updateMeal: updateMeal,
+            getMealTypes: getMealTypes,
             getAllIngredients: getAllIngredients,
             getIngredient: getIngredient,
             saveIngredient: saveIngredient,
@@ -51,6 +52,13 @@
 
         function updateMeal(meal){
             return $http.put('/api/meals', meal);
+        }
+
+        function getMealTypes(){
+            return $http.get('/api/mealtypes')
+                .then(function(response){
+                    return response.data;
+                });
         }
 
         function getAllIngredients(){
