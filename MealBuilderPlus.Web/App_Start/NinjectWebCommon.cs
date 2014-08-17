@@ -1,5 +1,6 @@
 using System.Web.Http;
 using MealBuilderPlus.Data;
+using MealBuilderPlus.Data.Services;
 using WebApiContrib.IoC.Ninject;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(MealBuilderPlus.Web.App_Start.NinjectWebCommon), "Start")]
@@ -68,7 +69,7 @@ namespace MealBuilderPlus.Web.App_Start
         {
             kernel.Bind<MealBuilderPlusContext>().To<MealBuilderPlusContext>().InRequestScope();
             kernel.Bind<IMealBuilderPlusRepository>().To<MealBuilderPlusRepository>().InRequestScope();
-
+            kernel.Bind<IMealEaterService>().To<MealEaterService>().InRequestScope();
         }        
     }
 }

@@ -5,9 +5,9 @@
         .module("mealBuilderPlusApp")
         .controller("mealGeneratorController", mealGeneratorController);
 
-    mealGeneratorController.$inject = ["$timeout","mealBuilderService", "mealGeneratorService", "alertService"];
+    mealGeneratorController.$inject = ["$timeout","$location", "mealBuilderService", "mealGeneratorService", "alertService"];
 
-    function mealGeneratorController($timeout, mealBuilderService, mealGeneratorService, alertService){
+    function mealGeneratorController($timeout, $location, mealBuilderService, mealGeneratorService, alertService){
         /* jshint validthis: true */
         var vm = this;
         vm.meals = {};
@@ -18,7 +18,7 @@
         vm.addMealTypes = addMealTypes;
         vm.generateMeals = generateMeals;
         vm.reset = reset;
-        vm.acceptMeals = acceptMeals;
+        vm.acceptWeeklyMeals = acceptWeeklyMeals;
         //Need both to get proper UI transition with meal generation
         vm.mealsGenerated = false;
         vm.mealsNotGenerated = false;
@@ -64,10 +64,11 @@
             }, 2000);
         }
 
-        function acceptMeals(){
-            mealBuilderService.acceptMeals(vm.weeklyMeals)
+        function acceptWeeklyMeals(){
+            mealGeneratorService.acceptWeeklyMeals(vm.weeklyMeals)
                 .then(function(){
                     alertService.withSuccess("Your meals have been accepted!");
+                    $location.url("/mealInformation");
                 }, function(){
                     alertService.withError("Error! Please try again!");
                 });

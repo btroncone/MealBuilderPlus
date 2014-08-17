@@ -1,15 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using MealBuilderPlus.Data;
 using MealBuilderPlus.Data.Entities;
+using MealBuilderPlus.Data.Services;
 
 namespace MealBuilderPlus.Web.Controllers
 {
     [RoutePrefix("api/meals")]
     public class MealController : BaseApiController
     {
-        public MealController(IMealBuilderPlusRepository repo) : base(repo){}
+        private readonly IMealEaterService _meatEaterService;
+        public MealController(IMealBuilderPlusRepository repo, IMealEaterService mealEaterService) : base(repo)
+        {
+            _meatEaterService = mealEaterService;
+        }
 
         [Route("")]
         public IHttpActionResult Get()
@@ -58,6 +64,24 @@ namespace MealBuilderPlus.Web.Controllers
             catch
             {
                //TODO Log 
+            }
+            return BadRequest();
+        }
+
+        [Route("accept")]
+        public IHttpActionResult Post([FromBody] List<Meal> meals)
+        {
+            
+            try
+            {
+                if (_meatEaterService.MarkAsEaten(meals) && Repository.SaveAll())
+                {
+                    return Ok();
+                }
+            }
+            catch
+            {
+                //TODO Log 
             }
             return BadRequest();
         }

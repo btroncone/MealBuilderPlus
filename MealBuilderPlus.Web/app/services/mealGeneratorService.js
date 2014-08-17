@@ -5,10 +5,13 @@
         .module("mealBuilderPlusApp")
         .factory("mealGeneratorService", mealGeneratorService);
 
-    function mealGeneratorService(){
+    mealGeneratorService.$inject = ["$http"];
+
+    function mealGeneratorService($http){
         var service = {
             checkAvailability: checkAvailability,
             generateWeeklyMeals : generateWeeklyMeals,
+            acceptWeeklyMeals: acceptWeeklyMeals,
             getMealTypes: getMealTypes
         };
 
@@ -22,17 +25,6 @@
                            .value();
         }
 
-        function generateWeeklyMeals(meals, requestedMealTypes) {
-            //var weeklyMealsAndIngredients = [];
-            return getMealsFromMealTypes(meals, requestedMealTypes);
-            //var ingredientList = compileIngredients(generatedMeals);
-
-            //weeklyMealsAndIngredients.push(generatedMeals);
-            //weeklyMealsAndIngredients.push(ingredientList);
-
-            //return generatedMeals;
-        }
-
         function checkAvailability(meals, requestedMealTypes){
             var status = [];
             _(requestedMealTypes).forEach(function(requestedType){
@@ -43,6 +35,14 @@
                 }
             });
             return status;
+        }
+
+        function generateWeeklyMeals(meals, requestedMealTypes) {
+            return getMealsFromMealTypes(meals, requestedMealTypes);
+        }
+
+        function acceptWeeklyMeals(meals){
+            return $http.post("/api/meals/accept", meals);
         }
 
         function getMealsFromMealTypes(meals, requestedMealTypes){
@@ -60,8 +60,5 @@
             return selectedMeals;
         }
 
-        function compileIngredients(generatedMeals){
-
-        }
     }
 })();

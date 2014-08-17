@@ -55,6 +55,8 @@
     <Compile Include="MealTypes.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IMealEaterService.cs" />
+    <Compile Include="Services\MealEaterService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
