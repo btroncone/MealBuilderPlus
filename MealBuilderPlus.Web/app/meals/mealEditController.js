@@ -5,20 +5,22 @@
         .module("mealBuilderPlusApp")
         .controller("mealEditController", mealEditController);
 
-    mealEditController.$inject = ["$routeParams", "$location", "mealBuilderService", "alertService"];
+    mealEditController.$inject = ["$routeParams", "$location", "$q", "mealBuilderService", "alertService"];
 
-    function mealEditController($routeParams, $location, mealBuilderService, alertService){
+    function mealEditController($routeParams, $location, $q, mealBuilderService, alertService){
         /* jshint validthis: true */
         var vm = this;
         var mealId = $routeParams.mealId;
         vm.meal = {};
         vm.updateMeal = updateMeal;
+        vm.mealTypes = [];
 
         activate();
         function activate(){
-            return mealBuilderService.getMeal(mealId)
+            return $q.all([mealBuilderService.getMeal(mealId), mealBuilderService.getMealTypes()])
                 .then(function(data){
-                    vm.meal = data;
+                    vm.meal = data[0];
+                    vm.mealTypes = data[1];
                 });
         }
 

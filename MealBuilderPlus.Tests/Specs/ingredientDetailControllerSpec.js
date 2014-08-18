@@ -27,7 +27,7 @@ describe("the ingredientDetailController", function(){
         $httpBackend.flush();
     });
 
-    it('should retrieve the requested meal', function(){
+    it('should retrieve the requested ingredient', function(){
         expect(scope.vm.ingredient.ingredientId).toBe(1);
     });
 });
